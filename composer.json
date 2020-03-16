@@ -1,0 +1,24 @@
+{
+    "name": "magepow/speedoptimizer",
+    "description": "",
+    "type": "magento2-module",
+    "license": [
+      "MIT"
+    ],
+    "authors": [
+      {
+        "name": "Magepow",
+        "email": "support@magepow.com",
+        "homepage": "https://www.magepow.com",
+        "role": "Technical Support"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Magepow\\SpeedOptimizer\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!-- /**
+ * @Author: nguyen
+ * @Date:   2020-02-12 14:01:01
+ * @Last Modified by:   nguyen
+ * @Last Modified time: 2020-02-15 18:55:34
+ */ -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magepow" translate="label" sortOrder="86">
+            <label>Magepow</label>
+        </tab>
+        <section id="magepow_speedoptimizer" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Speed Optimizer</label>
+            <tab>magepow</tab>
+            <resource>Magepow_SpeedOptimizer::config_speedoptimizer</resource>
+            <group id="general" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <comment>Enabled Module</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loading_body" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Preloading Body</label>
+                    <comment>Preloading body site </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loading_body_placeholder" translate="label comment" type="image" sortOrder="15"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Body placeholder :</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png.</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">magepow/speedoptimizer</upload_dir>
+                    <base_url type="media" scope_info="1">magepow/speedoptimizer</base_url>
+                </field>
+                <field id="loading_img" translate="label comment" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Preloading Images</label>
+                    <comment>Preloading Images </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="exclude_img" translate="label comment" type="text" sortOrder="22"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Exclude Image class</label>
+                    <comment>Exclude Images exist class(comma separated)</comment>
+                </field>
+                <field id="loading_img_placeholder" translate="label comment" type="image" sortOrder="25"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Image placeholder :</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png.</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">magepow/speedoptimizer</upload_dir>
+                    <base_url type="media" scope_info="1">magepow/speedoptimizer</base_url>
+                </field>
+                <field id="placeholder" translate="label comment" type="select" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Placeholder Images</label>
+                    <comment>Placeholder help keep layout original while loading</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="regex_block" translate="label comment" type="textarea" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Regex Block</label>
+                    <comment>Regex Block HMTL you want add lazyload.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="lazy_ajax" translate="label comment" type="select" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lazyload Images Response Ajax</label>
+                    <comment>Apply lazyload for Response Ajax</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="minify_html" translate="label comment" type="select" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minify Html</label>
+                    <comment>Minify Html</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="defer_js" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Defer Javascripts</label>
+                    <comment>Defer Javascripts</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="body_includes" translate="label comment" type="textarea" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Scripts and Style Sheets</label>
+                    <comment>This will be included before body closing tag in page HTML.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
