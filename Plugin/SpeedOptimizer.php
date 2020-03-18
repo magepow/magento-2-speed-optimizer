@@ -2,8 +2,8 @@
 /**
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
- * @Last Modified by:   nguyen
- * @Last Modified time: 2020-03-16 09:15:18
+ * @Last Modified by:   Alex Dong
+ * @Last Modified time: 2020-03-19 00:17:08
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -312,6 +312,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
             '/[^\S ]+\</s',     // strip whitespaces before tags, except space
             '/(\s)+/s',         // shorten multiple whitespace sequences
+            '/<!--((?!ko)[\s\S])*?-->/' // remove HTML comments not knockoutSJ
             // '/<!--(.|\s)*?-->/' // Remove HTML comments this cause error knockoutJS
         );
 
@@ -319,6 +320,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '>',
             '<',
             '\\1',
+            '',
             // ''
         );
 
