@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-03-19 11:29:54
+ * @Last Modified time: 2020-03-19 17:50:53
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -185,7 +185,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '/<img\s*.*?(?:class="(.*?)")?([^>]*)>/',
             function($match) use ($placeholder) {
 
-                if(stripos($match[0], ' data-src=\"') !== false) return $match[0];
+                if(stripos($match[0], ' data-src="') !== false) return $match[0];
 
                 if($match[1]){
 
