@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-03-19 00:17:08
+ * @Last Modified time: 2020-03-19 11:29:54
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -14,7 +14,6 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Design\Theme\ThemeProviderInterface;
 use Magento\Framework\App\Response\Http;
 use Magepow\SpeedOptimizer\Helper\Data;
-use Magepow\SpeedOptimizer\Plugin\Minifier as jsMinify;
 
 class SpeedOptimizer extends \Magento\Framework\View\Element\Template
 {
@@ -25,8 +24,6 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
     public $content;
 
     public $isJson;
-
-    public $jsMinify;
 
     public $exclude = [];
 
@@ -40,7 +37,6 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         \Magento\Framework\View\Element\Template\Context $context,
         RequestInterface $request,
         Data $helper,
-        jsMinify $jsMinify,
         StoreManagerInterface $storeManager,
         ThemeProviderInterface $themeProvider,
         array $data = []
@@ -49,7 +45,6 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
         $this->request  = $request;
         $this->helper   = $helper;
-        $this->jsMinify = $jsMinify;
         $this->storeManager  = $storeManager;
         $this->themeProvider =  $themeProvider;
 
@@ -190,7 +185,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '/<img\s*.*?(?:class="(.*?)")?([^>]*)>/',
             function($match) use ($placeholder) {
 
-                if(strpos($match[0], ' data-src="')) return $match[0];
+                if(stripos($match[0], ' data-src=\"') !== false) return $match[0];
 
                 if($match[1]){
 
@@ -217,8 +212,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '/<img\s*.*?(?:class=\\\"(.*?)\\\")?([^>]*)>/',
             function($match) use ($placeholder) {
                 
-                if(strpos($match[0], ' data-src=\"')) return $match[0];
-
+                if(stripos($match[0], ' data-src=\"') !== false) return $match[0];
                 if($match[1]){
 
                     if( $this->isExclude($match[1]) ) return $match[0];
@@ -276,30 +270,28 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         return $this->addToBottomBody($content, $script);
     }
 
-    public function deferJavascripts( $content )
-    {
-        if (stripos($content, "</body>") === false) return $content;
-
-        preg_match_all('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', $content, $scripts);
-        if ($scripts and isset($scripts[0]) and $scripts[0]) {
-            $content = preg_replace('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', '', $content);
-            $scripts = implode(" ", $scripts[0]);
-            $scripts = $this->jsMinify::minify($scripts);
-            $content = str_ireplace("</body>", "$scripts</body>", $content);
-        }
-        return $content;
-    }
-
     public function minifyJs($content, $deferJs=false)
     {
-        $regex  = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
-        if($deferJs){
-           return $this->deferJavascripts($content);
+        $regex   = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
+        $pattern = '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/';
+        if( $deferJs && (stripos($content, "</body>") === false) ){
+            $scripts = '';
+            $content = preg_replace_callback(
+                '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
+                function($match) use($pattern, &$scripts){
+                    $scripts .= preg_replace($pattern, '', $match[0]);
+                    return '';
+                },
+                $content
+            );
+
+            return str_ireplace("</body>", "$scripts</body>", $content);
+
         } else {
             return preg_replace_callback(
                 '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
-                function($match) {
-                    return $this->jsMinify::minify($match[0]);
+                function($match) use($pattern){
+                    return preg_replace($pattern, '', $match[0]);
                 },
                 $content
             );
@@ -312,7 +304,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
             '/[^\S ]+\</s',     // strip whitespaces before tags, except space
             '/(\s)+/s',         // shorten multiple whitespace sequences
-            '/<!--((?!ko)[\s\S])*?-->/' // remove HTML comments not knockoutSJ
+            '/<!--((?! ko | \/ko )[\s\S])*?-->/' // remove comment exclude knockoutJS
             // '/<!--(.|\s)*?-->/' // Remove HTML comments this cause error knockoutJS
         );
 
