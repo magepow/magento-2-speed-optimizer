@@ -25,6 +25,10 @@ Speed Optimizer for Magento 2 is the extension that can help you improve your we
 ### 5. Easy To Customize
 - Scripts and Style Sheets: This field is for who want to customize the lazy load, use particular scripts or style.
 
+#### Result After using Speed Optimizer Extension
+ ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/images/Speed%20test%201.png)
+ ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/images/speed%20test%202.jpg)
+
 ## Detail User Guide
 * [Magento 2 Recent Order Document](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
