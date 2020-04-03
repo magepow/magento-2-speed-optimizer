@@ -98,7 +98,7 @@ Speed Optimizer for Magento 2 is the extension that can help you improve your we
 
 * [Kuteshop responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/kuteshop-multipurpose-responsive-magento-1-2-theme/12985435)
 
-[![Latest Stable Version](https://poser.pugx.org/magepow/ajaxcontact/v/stable)](https://packagist.org/packages/magepow/ajaxcontact)
-[![Total Downloads](https://poser.pugx.org/magepow/ajaxcontact/downloads)](https://packagist.org/packages/magepow/ajaxcontact)
+[![Latest Stable Version](https://poser.pugx.org/magepow/speedoptimizer/v/stable)](https://packagist.org/packages/magepow/speedoptimizer)
+[![Total Downloads](https://poser.pugx.org/magepow/speedoptimizer/downloads)](https://packagist.org/packages/magepow/speedoptimizer)
 
 
