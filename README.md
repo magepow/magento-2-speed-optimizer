@@ -3,6 +3,15 @@
 Website speed is one of the most important factors that significantly impact your online sales. In fact, many research resources show that websites with fast loading page speed give lower bounce rates, the online revenue also increases after optimized. No doubt, the faster speed can bring to you great shopping experience instead of slow page loading. Some store owners might find different ways to improve their page speed such as speed optimization Service, extensions to optimize, or using some features in Magento default to increase website speed.
 Speed Optimizer for Magento 2 is the extension that can help you improve your website speed significantly by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts,...to improve your website speed. Therefore, the extension will help you save much of time and cost.
 
+## How to install Magento 2 Speed Optimizer
+### ✓ Install Magepow Speed Optimizer via composer (recommend)
+Run the following command in Magento 2 root folder:
+
+`composer require magepow/SpeedOptimizer`
+
+`php bin/magento setup:upgrade`
+
+
 ## Highlight Features
 ### 1. Easy To Enable/Disable 
 - Disable and Enable the module whenever you want in Admin Panel.
