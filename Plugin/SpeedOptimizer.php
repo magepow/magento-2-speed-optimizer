@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-03-19 17:50:53
+ * @Last Modified time: 2020-05-03 21:44:13
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -279,7 +279,12 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             $content = preg_replace_callback(
                 '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
                 function($match) use($pattern, &$scripts){
-                    $scripts .= preg_replace($pattern, '', $match[0]);
+                    if(trim($match[1], ' ')){
+                        $scripts .= preg_replace($pattern, '', $match[0]);
+                    }else {
+                        $scripts .= $match[0];
+                    }
+                    
                     return '';
                 },
                 $content
@@ -291,7 +296,11 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             return preg_replace_callback(
                 '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
                 function($match) use($pattern){
-                    return preg_replace($pattern, '', $match[0]);
+                    if(trim($match[1], ' ')){
+                        return preg_replace($pattern, '', $match[0]); 
+                    } else {
+                        return $match[0];
+                    }
                 },
                 $content
             );
