@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-05-05 14:28:11
+ * @Last Modified time: 2020-05-14 09:55:34
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -186,11 +186,8 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             function($match) use ($placeholder) {
 
                 if(stripos($match[0], ' data-src="') !== false) return $match[0];
-
-                if($match[1]){
-
+                if(stripos($match[0], ' class="') !== false){
                     if( $this->isExclude($match[1]) ) return $match[0];
-
                     $lazy = str_replace(' class="', ' class="lazyload ', $match[0]); 
                 }else {
                     $lazy = str_replace('<img ', '<img class="lazyload" ', $match[0]);
@@ -213,10 +210,8 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             function($match) use ($placeholder) {
                 
                 if(stripos($match[0], ' data-src=\"') !== false) return $match[0];
-                if($match[1]){
-
+                if(stripos($match[0], ' class="') !== false){
                     if( $this->isExclude($match[1]) ) return $match[0];
-
                     $lazy = str_replace(' class=\"', ' class=\"lazyload ', $match[0]); 
                 }else {
                     $lazy = str_replace('<img ', '<img class=\"lazyload\" ', $match[0]);
