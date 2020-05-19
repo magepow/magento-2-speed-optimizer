@@ -39,11 +39,11 @@ Run the following command in Magento 2 root folder:
 
 ### Speed Test On Gtmetrix.Com
 
- ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/images/Speed%20test%201.png)
+ ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/speed_gtmetrix.png)
 
 ### Speed Test On Google PageSpeed Insights
 
- ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/images/speed%20test%202.jpg)
+ ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/speed_google.jpg)
 
 ## Detail User Guide
 * [Magento 2 Recent Order Document](https://docs.alothemes.com/m2/extension/speedoptimizer/)
