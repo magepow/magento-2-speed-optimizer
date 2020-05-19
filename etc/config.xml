@@ -28,7 +28,6 @@
                             if(img.attr('src') == img.data('src')){img.addClass('loaded');}
                             if($.equalheight) $.fn.equalheight();
                         });
-                        if($.equalheight) $.fn.equalheight();});
                         $('body').on('contentUpdated', function () {$(this).find("img.lazyload").not(".loaded").lazyload();});
                         $('body').removeClass('loading_body');
                         }); 
