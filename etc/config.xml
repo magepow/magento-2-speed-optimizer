@@ -26,6 +26,7 @@
                         imgLazy.on('load',function(){
                             var img = $(this);
                             if(img.attr('src') == img.data('src')){img.addClass('loaded');}
+                            else {img.lazyload();}
                             if($.equalheight) $.fn.equalheight();
                         });
                         $('body').on('contentUpdated', function () {$(this).find("img.lazyload").not(".loaded").lazyload();});
