@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   nguyen
- * @Last Modified time: 2020-02-15 18:55:34
+ * @Last Modified time: 2020-05-19 18:55:34
  */ -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
 	<default>
@@ -23,7 +23,11 @@
                         require(["jquery", "magepow/lazyload", "domReady!"], function($, lazyload){
                         var imgLazy = $('img.lazyload').not(".loaded"); 
                         imgLazy.lazyload(); 
-                        imgLazy.on('load',function(){$(this).addClass('loaded');
+                        imgLazy.on('load',function(){
+                            var img = $(this);
+                            if(img.attr('src') == img.data('src')){img.addClass('loaded');}
+                            if($.equalheight) $.fn.equalheight();
+                        });
                         if($.equalheight) $.fn.equalheight();});
                         $('body').on('contentUpdated', function () {$(this).find("img.lazyload").not(".loaded").lazyload();});
                         $('body').removeClass('loading_body');
