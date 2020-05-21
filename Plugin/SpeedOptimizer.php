@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-05-14 09:55:34
+ * @Last Modified time: 2020-05-21 14:43:02
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -17,21 +17,23 @@ use Magepow\SpeedOptimizer\Helper\Data;
 
 class SpeedOptimizer extends \Magento\Framework\View\Element\Template
 {
-    public $request;
+    protected $request;
 
-    public $helper;
+    protected $helper;
 
-    public $content;
+    protected $content;
 
-    public $isJson;
+    protected $isJson;
 
-    public $exclude = [];
+    protected $exclude = [];
+
+    protected $scripts = [];
 
     protected $storeManager;
 
     protected $themeProvider;
 
-    public $placeholder = 'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22' . '$width' . '%22%20height%3D%22' . '$height' . '%22%20viewBox%3D%220%200%20225%20265%22%3E%3C%2Fsvg%3E';
+    protected $placeholder = 'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22' . '$width' . '%22%20height%3D%22' . '$height' . '%22%20viewBox%3D%220%200%20225%20265%22%3E%3C%2Fsvg%3E';
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -74,34 +76,54 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         $body_includes = $this->helper->getConfigModule('general/body_includes');
         if($body_includes) $body = $this->addToBottomBody($body, $body_includes);
 
-        $deferJs = $this->helper->getConfigModule('general/defer_js');
-        $body = $this->minifyJs($body, $deferJs);
+        $minifyHtml    = $this->helper->getConfigModule('general/minify_html');
+        $deferJs       = $this->helper->getConfigModule('general/defer_js');
 
-        $minifyHtml = $this->helper->getConfigModule('general/minify_html');
+        $body = $this->processExcludeJs($body, $minifyHtml, $deferJs);
         if($minifyHtml) $body = $this->minifyHtml($body);
 
-        $bodyClass = 'loading_img';
+        $bodyClass   = '';
         $loadingBody = $this->helper->getConfigModule('general/loading_body');
         if($loadingBody){
             $bodyClass .= ' loading_body';
-            $body = $this->addToTopBody($body, '<div class="preloading"><div class="loading"></div></div>'); 
-        }  
-
-        $body = $this->addBodyClass($body, $bodyClass);
-
-        if(!$this->helper->getConfigModule('general/loading_img')) return;        
-
-        $exclude = $this->helper->getConfigModule('general/exclude_img');
-        // $exclude = 'product-image-photo';
-        if($exclude){
-            $exclude = str_replace(' ', '', $exclude);
-            $this->exclude = explode(',', $exclude);
+            $body       = $this->addToTopBody($body, '<div class="preloading"><div class="loading"></div></div>'); 
         }
-        $placeholder = $this->helper->getConfigModule('general/placeholder');
-        // $placeholder = false;
-        $regex_block = $this->helper->getConfigModule('general/regex_block');
-        // $regex_block = '';
-        $body = $this->addLazyload($body, $placeholder, $regex_block );
+
+        $loadingImg  = $this->helper->getConfigModule('general/loading_img');
+        if($loadingImg){
+            $bodyClass .= ' loading_img';   
+            $exclude = $this->helper->getConfigModule('general/exclude_img');
+            // $exclude = 'product-image-photo';
+            if($exclude){
+                $exclude = str_replace(' ', '', $exclude);
+                $this->exclude = explode(',', $exclude);
+            }
+            $placeholder = $this->helper->getConfigModule('general/placeholder');
+            // $placeholder = false;
+            $regex_block = $this->helper->getConfigModule('general/regex_block');
+            // $regex_block = '';
+            $body = $this->addLazyload($body, $placeholder, $regex_block );             
+        }
+
+        $body = $this->addBodyClass($body, $bodyClass);     
+
+        if ($deferJs){
+            $scripts = implode('', $this->scripts);
+            $body    = $this->addToBottomBody($body, $scripts);
+        } else {
+            $body = preg_replace_callback(
+                '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
+                function($match) use($pattern, &$scripts){
+                    $scriptId = trim($match[1], ' ');
+                    if($scriptId && isset($this->scripts[$scriptId])){
+                        return $this->scripts[$scriptId];
+                    }else {
+                        return $match[0];
+                    }
+                },
+                $body
+            );
+        }
 
         $response->setBody($body);
     }
@@ -265,41 +287,36 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         return $this->addToBottomBody($content, $script);
     }
 
-    public function minifyJs($content, $deferJs=false)
+    public function processExcludeJs($content, $minify=true, $deferJs=true)
     {
         $regex   = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
-        $pattern = '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/';
-        if( $deferJs && (stripos($content, "</body>") === false) ){
-            $scripts = '';
-            $content = preg_replace_callback(
-                '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
-                function($match) use($pattern, &$scripts){
-                    if(trim($match[1], ' ')){
-                        $scripts .= preg_replace($pattern, '', $match[0]);
-                    }else {
-                        $scripts .= $match[0];
-                    }
-                    
-                    return '';
-                },
-                $content
-            );
+        $content = preg_replace_callback(
+            '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
+            function($match) use($minify, $deferJs){
+                // if(stripos($match[0], 'type="text/x-magento') !== false) return $match[0];
+                $scriptId = 'script_' . uniqid();
+                if ($minify && trim($match[1], ' ')){
+                    $search = array(
+                        '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/',
+                        '/(\s)+/s',         // shorten multiple whitespace sequences
+                    );
 
-            return str_ireplace("</body>", "$scripts</body>", $content);
+                    $replace = array(
+                        '',
+                        '\\1',
+                    );
 
-        } else {
-            return preg_replace_callback(
-                '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
-                function($match) use($pattern){
-                    if(trim($match[1], ' ')){
-                        return preg_replace($pattern, '', $match[0]); 
-                    } else {
-                        return $match[0];
-                    }
-                },
-                $content
-            );
-        }
+                    $this->scripts[$scriptId] =  preg_replace($search, $replace, $match[0]);
+                }else {
+                    $this->scripts[$scriptId] = $match[0];
+                }
+                if (!$deferJs) return '<script>' . $scriptId . '</script>';
+                return '';
+            },
+            $content
+        );
+
+        return $content;
     }
 
     public function minifyHtml($content) 
