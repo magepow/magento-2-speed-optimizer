@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-05-21 14:43:02
+ * @Last Modified time: 2020-05-21 15:07:46
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -113,7 +113,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         } else {
             $body = preg_replace_callback(
                 '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
-                function($match) use($pattern, &$scripts){
+                function($match){
                     $scriptId = trim($match[1], ' ');
                     if($scriptId && isset($this->scripts[$scriptId])){
                         return $this->scripts[$scriptId];
@@ -287,26 +287,15 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         return $this->addToBottomBody($content, $script);
     }
 
-    public function processExcludeJs($content, $minify=true, $deferJs=true)
+    public function processExcludeJs($content, $minify=false, $deferJs=false)
     {
-        $regex   = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
         $content = preg_replace_callback(
             '~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is',
             function($match) use($minify, $deferJs){
                 // if(stripos($match[0], 'type="text/x-magento') !== false) return $match[0];
                 $scriptId = 'script_' . uniqid();
                 if ($minify && trim($match[1], ' ')){
-                    $search = array(
-                        '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/',
-                        '/(\s)+/s',         // shorten multiple whitespace sequences
-                    );
-
-                    $replace = array(
-                        '',
-                        '\\1',
-                    );
-
-                    $this->scripts[$scriptId] =  preg_replace($search, $replace, $match[0]);
+                    $this->scripts[$scriptId] =  $this->minifyJs( $match[0] );
                 }else {
                     $this->scripts[$scriptId] = $match[0];
                 }
@@ -317,6 +306,21 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         );
 
         return $content;
+    }
+
+    public function minifyJs($script)
+    {
+        $regex   = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
+        $search = array(
+            '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/',
+            '/(\s)+/s',         // shorten multiple whitespace sequences
+        );
+
+        $replace = array(
+            '',
+            '\\1',
+        );
+        return preg_replace($search, $replace, $script);    
     }
 
     public function minifyHtml($content) 
