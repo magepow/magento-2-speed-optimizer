@@ -3,11 +3,11 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   nguyen
- * @Last Modified time: 2020-05-19 18:55:34
+ * @Last Modified time: 2020-06-22 18:55:34
  */ -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
-	<default>
-	    <magepow_speedoptimizer>
+    <default>
+        <magepow_speedoptimizer>
             <general>
                 <enabled>1</enabled>
                 <loading_body>0</loading_body>
@@ -17,7 +17,7 @@
                 <regex_block><![CDATA[<main id="maincontent"]]></regex_block>
                 <lazy_ajax>0</lazy_ajax>
                 <minify_html>1</minify_html>
-                <defer_js>1</defer_js>
+                <defer_js>0</defer_js>
                 <body_includes><![CDATA[
                     <script type="text/javascript"> 
                         require(["jquery", "magepow/lazyload", "domReady!"], function($, lazyload){
@@ -25,6 +25,7 @@
                         imgLazy.lazyload(); 
                         imgLazy.on('load',function(){
                             var img = $(this);
+                            if(img.hasClass( "loaded" )) return;
                             if(img.attr('src') == img.data('src')){img.addClass('loaded');}
                             else {img.lazyload();}
                             if($.equalheight) $.fn.equalheight();
@@ -33,6 +34,7 @@
                             var lazy = $(this).find("img.lazyload").not(".loaded").lazyload();
                             lazy.on('load',function(){
                                 var img = $(this);
+                                if(img.hasClass( "loaded" )) return;
                                 if(img.attr('src') == img.data('src')){img.addClass('loaded');}
                                 else {img.lazyload();}
                                 if($.equalheight) $.fn.equalheight();
@@ -44,5 +46,5 @@
                 </body_includes>
             </general>
         </magepow_speedoptimizer>    
-	</default>
+    </default>
 </config>
