@@ -7,11 +7,11 @@ Speed Optimizer for Magento 2 is the extension that can help you improve your we
 ### ✓ Install Magepow Speed Optimizer via composer (recommend)
 Run the following command in Magento 2 root folder:
 
-`composer require magepow/speedoptimizer`
-
-`php bin/magento setup:upgrade`
-
-`php bin/magento setup:static-content:deploy -f`
+```
+composer require magepow/speedoptimizer
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+```
 
 ## Highlight Features
 ### 1. Easy To Enable/Disable 
@@ -47,6 +47,13 @@ Run the following command in Magento 2 root folder:
 
 ## Detail User Guide
 * [Magento 2 Recent Order Document](https://docs.alothemes.com/m2/extension/speedoptimizer/)
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
+
 
 **Free Extensions List**
 
