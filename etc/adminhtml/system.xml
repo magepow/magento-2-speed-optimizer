@@ -61,19 +61,9 @@
                     <comment>Regex Block HMTL you want add lazyload.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="lazy_ajax" translate="label comment" type="select" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Lazyload Images Response Ajax</label>
-                    <comment>Apply lazyload for Response Ajax</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
                 <field id="minify_html" translate="label comment" type="select" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Minify Html</label>
                     <comment>Minify Html</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="defer_js" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Defer Javascripts</label>
-                    <comment>Defer Javascripts</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="body_includes" translate="label comment" type="textarea" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
