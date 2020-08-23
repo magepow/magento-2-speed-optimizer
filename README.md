@@ -29,7 +29,7 @@ php bin/magento setup:static-content:deploy -f
  
 ### 4. Minify/Defer Files
 - Support minify javascript inline
-- Defer javascript: move Javascript to page bottom. A script that will not run until after the page has loaded
+- Defer javascript: move Javascript to page bottom. A script that will not run until after the page has loaded (This is abandon magento avaiable feature in Admin Panel > Stores > Configuration > Advanced > Developer > Javascript Settings > Move JS code to the bottom of the page => Choose "Yes" )
 - Support minify CSS inline
  
 ### 5. Easy To Customize
