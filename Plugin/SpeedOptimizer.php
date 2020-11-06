@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2020-05-21 15:07:46
+ * @Last Modified time: 2020-11-06 14:06:27
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -320,7 +320,9 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             '',
             '\\1',
         );
-        return preg_replace($search, $replace, $script);    
+        $minScript = preg_replace($search, $replace, $script);
+        /* Return $script when $minScript empty */
+        return $minScript ? $minScript : $script;
     }
 
     public function minifyHtml($content) 
@@ -341,7 +343,9 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             // ''
         );
 
-        return preg_replace($search, $replace, $content);
+        $minHtml = preg_replace($search, $replace, $content);
+        /* Return $content when $minHtml empty */
+        return $minHtml ? $minHtml : $content;
     }
 
     public function addLoading($content)
