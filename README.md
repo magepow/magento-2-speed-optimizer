@@ -7,7 +7,7 @@ In fact, many research resources show that users often leave a website if it tak
 
 To test your web speed you can use Google PageSpeed Insights. This is a free tool of Google that allows you to test the loading speed of websites. If the result is below 90 points, we recommend that you explore ways to make your website perform better. 
 
-Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, this extension will help you save much time and cost.
+Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, Magento 2 Speed Optimizer extension will help you save much time and cost.
 
 
 ### Highlight Features
