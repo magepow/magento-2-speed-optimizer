@@ -56,7 +56,7 @@ php bin/magento setup:static-content:deploy -f
 
 
 ### Detail User Guide
-* [Magento 2 Recent Order Document](https://docs.alothemes.com/m2/extension/speedoptimizer/)
+* [Magento2 speed optimization](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
 
 ### Donation
