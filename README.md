@@ -9,116 +9,6 @@ To test your web speed you can use Google PageSpeed Insights. This is a free too
 
 Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, Magento 2 Speed Optimizer extension will help you save much time and cost.
 
-Server Environment Checking
-Optimized by Vanish Cache
-Magento server config optimization
-Magento Scripts & Code Optimization
-Project Support
-Estimated time
-Price
-Standard
-
-The plan for website speed improvement
-
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden hidden
-1 days
-$99
-Professional
-
-The plan for website speed-enhancing
-
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden hidden hidden
-2 days
-$199
-Magepow Plus
-
-The plan for reaching the highest speed
-
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden
-hidden hidden hidden
-Contact us
-Contact us
-
 ### Highlight Features
 #### 1. Easy To Enable/Disable 
 - Disable and Enable the module whenever you want in Admin Panel.
@@ -152,7 +42,8 @@ Contact us
 
  ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/speed_google.jpg)
  
- 
+### Magepow_Speed Optimizer Pricing
+ ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/speed_gtmetrix.png)(https://alothemes.com/default/magento2-speed-optimizer.html)
 ### How to install Magento 2 Speed Optimizer
 #### ✓ Install Magepow Speed Optimizer via composer (recommend)
 Run the following command in Magento 2 root folder:
