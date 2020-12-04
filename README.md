@@ -9,6 +9,115 @@ To test your web speed you can use Google PageSpeed Insights. This is a free too
 
 Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, Magento 2 Speed Optimizer extension will help you save much time and cost.
 
+Server Environment Checking
+Optimized by Vanish Cache
+Magento server config optimization
+Magento Scripts & Code Optimization
+Project Support
+Estimated time
+Price
+Standard
+
+The plan for website speed improvement
+
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden hidden
+1 days
+$99
+Professional
+
+The plan for website speed-enhancing
+
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden hidden hidden
+2 days
+$199
+Magepow Plus
+
+The plan for reaching the highest speed
+
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden
+hidden hidden hidden
+Contact us
+Contact us
 
 ### Highlight Features
 #### 1. Easy To Enable/Disable 
