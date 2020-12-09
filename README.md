@@ -1,4 +1,4 @@
-## Magento2 Speed Optimizer
+## Magento 2 Speed Optimizer SEO
 
 The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer of Alothemes will help speed up your website.
 
