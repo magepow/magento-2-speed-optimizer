@@ -66,6 +66,11 @@
                     <comment>Minify Html</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="minify_js" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Minify inline Javascript</label>
+                    <comment>Minify inline Javascript</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <field id="body_includes" translate="label comment" type="textarea" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Scripts and Style Sheets</label>
                     <comment>This will be included before body closing tag in page HTML.</comment>
