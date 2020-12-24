@@ -128,5 +128,6 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/speedoptimizer/v/stable)](https://packagist.org/packages/magepow/speedoptimizer)
 [![Total Downloads](https://poser.pugx.org/magepow/speedoptimizer/downloads)](https://packagist.org/packages/magepow/speedoptimizer)
+[![Daily Downloads](https://poser.pugx.org/magepow/speedoptimizer/d/daily)](https://packagist.org/packages/magepow/speedoptimizer)
 
 
