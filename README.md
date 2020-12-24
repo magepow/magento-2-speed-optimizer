@@ -9,6 +9,10 @@ To test your web speed you can use Google PageSpeed Insights. This is a free too
 
 Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, Magento 2 Speed Optimizer extension will help you save much time and cost.
 
+[![Latest Stable Version](https://poser.pugx.org/magepow/speedoptimizer/v/stable)](https://packagist.org/packages/magepow/speedoptimizer)
+[![Total Downloads](https://poser.pugx.org/magepow/speedoptimizer/downloads)](https://packagist.org/packages/magepow/speedoptimizer)
+[![Daily Downloads](https://poser.pugx.org/magepow/speedoptimizer/d/daily)](https://packagist.org/packages/magepow/speedoptimizer)
+
 ### Highlight Features
 #### 1. Easy To Enable/Disable 
 - Disable and Enable the module whenever you want in Admin Panel.
@@ -125,9 +129,3 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 * [Market responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/market-responsive-magento-2-theme/22997928)
 
 * [Kuteshop responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/kuteshop-multipurpose-responsive-magento-1-2-theme/12985435)
-
-[![Latest Stable Version](https://poser.pugx.org/magepow/speedoptimizer/v/stable)](https://packagist.org/packages/magepow/speedoptimizer)
-[![Total Downloads](https://poser.pugx.org/magepow/speedoptimizer/downloads)](https://packagist.org/packages/magepow/speedoptimizer)
-[![Daily Downloads](https://poser.pugx.org/magepow/speedoptimizer/d/daily)](https://packagist.org/packages/magepow/speedoptimizer)
-
-
