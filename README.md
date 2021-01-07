@@ -62,8 +62,6 @@ php bin/magento setup:static-content:deploy -f
 
 Download the latest version at [Magepow.com](https://magepow.com/)
 
-### Detail User Guide
-* [Magento2 speed optimization](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
 ### Page Speed Optimization  FAQs
 
@@ -74,6 +72,9 @@ Solution 1 (Recommend): Fixed the all missing ; before statement you can use 'us
 	You can read more how to use 'use strict'; here [use strict](https://www.w3schools.com/js/js_strict.asp) or [Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) 
 
 Solution 2: Go to Admin Panel > Stores > Configuration > Magepow > Speed Optimizer > Minify inline Javascript => Choose "No"
+
+### Detail User Guide
+* [Magento2 speed optimization](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
 ### Donation
 
