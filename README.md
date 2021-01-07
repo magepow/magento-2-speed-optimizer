@@ -58,7 +58,7 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
-#### Install Package from ```copy paste``` package
+#### ✓ Install Package from ```copy paste``` package
 
 Download the latest version at [Magepow.com](https://magepow.com/)
 
