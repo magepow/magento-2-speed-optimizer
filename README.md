@@ -58,10 +58,22 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
+#### Install Package from ```copy paste``` package
+
+Download the latest version at [Magepow.com](https://magepow.com/)
 
 ### Detail User Guide
 * [Magento2 speed optimization](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
+### Page Speed Optimization  FAQs
+
+#### Q: I got error javascript after enabled module
+A: The error can cause with SyntaxError: missing ; before statement. When module speedoptimizer minify js will cause error
+	You can read more error here [SyntaxError: missing ; before statement.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_semicolon_before_statement)
+Solution 1 (Recommend): Fixed the all missing ; before statement you can use 'use strict'; in code to find js to find and fixed error missing ; before statement.
+	You can read more how to use 'use strict'; here [use strict](https://www.w3schools.com/js/js_strict.asp) or [Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) 
+
+Solution 2: Go to Admin Panel > Stores > Configuration > Magepow > Speed Optimizer > Minify inline Javascript => Choose "No"
 
 ### Donation
 
