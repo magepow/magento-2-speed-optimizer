@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   nguyen
- * @Last Modified time: 2020-12-17 11:52:31
+ * @Last Modified time: 2021-01-31 22:02:48
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -26,6 +26,8 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
     protected $isJson;
 
     protected $exclude = [];
+
+    protected $excludeHtml = [];
 
     protected $scripts = [];
 
@@ -72,6 +74,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         }
 
         $body = $response->getBody();
+        $body = $this->getHtmlClean($body);
         $body = $this->addLoading($body);
         $body_includes = $this->helper->getConfigModule('general/body_includes');
         if($body_includes) $body = $this->addToBottomBody($body, $body_includes);
@@ -398,6 +401,60 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
 
         /** @var $theme \Magento\Framework\View\Design\ThemeInterface */
         return $this->themeProvider->getThemeById($themeId);
+    }
+
+    public function getHtmlClean($html)
+    {
+        /* break process if html have many tag body */
+        if( preg_match_all("/<body.*\/body>/s", $html, $matches) > 1) return $html;
+
+        /* break process if html have many tag body */
+
+        if($this->isMobile()){
+            $excludeHtml = $this->helper->getConfigModule('general/exclude_html_mobile');
+
+        } else {
+            $excludeHtml = $this->helper->getConfigModule('general/exclude_html_desktop');
+        }
+        if(!$excludeHtml) return $html;
+
+        $excludeHtml = str_replace(' ', '', $excludeHtml);
+        $this->excludeHtml = explode(',', $excludeHtml);      
+        $html = $this->cleanHtml($html, "~<\s*\bheader\b[^>]*>(.*?)<\s*\/\s*header\s*>~is");
+        $html = $this->cleanHtml($html, "~<\s*\bmain\b[^>]*>(.*?)<\s*\/\s*main\s*>~is");
+
+        return $html;
+    }
+
+    public function cleanHtml($html, $regex)
+    {
+        $content = preg_replace_callback( $regex, function($match){
+                $dom = new \DOMDocument;
+                $dom->preserveWhiteSpace = false;
+                libxml_use_internal_errors(true);
+                $dom->loadHTML($match[0], LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+                $xp = new \DOMXPath($dom);
+                $excludeHtml = $this->excludeHtml;
+                if($excludeHtml){
+                    foreach ($excludeHtml as $exclude) {
+                        // $exclude = '//*[@data-exclude_html_desktop="true"]';
+                        $removeNode = $xp->query($exclude)->item(0);
+                        if($removeNode) $removeNode->parentNode->removeChild($removeNode);
+                    }
+                }
+                $newHtml =  $dom->saveHTML($dom->documentElement);
+                $newHtml = trim($newHtml, ' ');
+                return $newHtml ? $newHtml : $match[1];
+            },
+            $html
+        );
+
+        return $content ? $content : $html;
+    }
+
+    public function isMobile()
+    {
+        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
     }
 
 }

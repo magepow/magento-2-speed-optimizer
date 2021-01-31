@@ -57,9 +57,17 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="regex_block" translate="label comment" type="textarea" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Regex Block</label>
+                    <label>Regex Block Start Lazyload</label>
                     <comment>Regex Block HMTL you want add lazyload.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="exclude_html_desktop" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Regex exclude HTML in desktop version</label>
+                    <comment>Regex exclude HTML in desktop version(comma separated)</comment>
+                </field>
+                <field id="exclude_html_mobile" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Regex exclude HTML in mobile version</label>
+                    <comment>Regex exclude html in mobile version(comma separated)</comment>
                 </field>
                 <field id="minify_html" translate="label comment" type="select" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Minify Html</label>
