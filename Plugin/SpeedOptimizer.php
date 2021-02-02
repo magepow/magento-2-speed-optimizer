@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2021-01-31 22:56:43
+ * @Last Modified time: 2021-02-02 15:39:46
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -74,7 +74,6 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         }
 
         $body = $response->getBody();
-        $body = $this->getHtmlClean($body);
         $body = $this->addLoading($body);
         $body_includes = $this->helper->getConfigModule('general/body_includes');
         if($body_includes) $body = $this->addToBottomBody($body, $body_includes);
@@ -84,6 +83,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         $deferJs       = $this->helper->getConfigModule('general/defer_js');
 
         $body = $this->processExcludeJs($body, $minifyJs, $deferJs);
+        $body = $this->getHtmlClean($body);
         if($minifyHtml) $body = $this->minifyHtml($body);
 
         $bodyClass   = '';
@@ -459,7 +459,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
                 }
                 $newHtml =  $dom->saveHTML($dom->documentElement);
                 $newHtml = trim($newHtml, ' ');
-                return $newHtml ? $newHtml : $match[1];
+                return $newHtml ? $newHtml : $match[0];
             },
             $html
         );
