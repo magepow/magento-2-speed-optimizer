@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2021-02-02 15:39:46
+ * @Last Modified time: 2021-02-02 20:42:59
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -452,9 +452,13 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
                 $excludeHtml = $this->excludeHtml;
                 if($excludeHtml){
                     foreach ($excludeHtml as $exclude) {
-                        // $exclude = '//*[@data-exclude_html_desktop="true"]';
-                        $removeNode = $xp->query($exclude)->item(0);
-                        if($removeNode) $removeNode->parentNode->removeChild($removeNode);
+                        // $exclude = '//*[@data-exclude_html_desktop="1"]';
+                        $items = $xp->query($exclude);
+                        if(is_array($items) || is_object($items)){
+                            foreach ($items as $item) {
+                                if($item) $item->parentNode->removeChild($item);
+                            }
+                        }
                     }
                 }
                 $newHtml =  $dom->saveHTML($dom->documentElement);
