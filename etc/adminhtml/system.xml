@@ -65,6 +65,10 @@
                     <label>Regex exclude HTML in desktop version</label>
                     <comment>Regex exclude HTML in desktop version(comma separated)</comment>
                 </field>
+                <field id="exclude_html_tablet" translate="label comment" type="text" sortOrder="48"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Regex exclude HTML in Tablet version</label>
+                    <comment>Regex exclude html in Tablet version(comma separated)</comment>
+                </field>
                 <field id="exclude_html_mobile" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Regex exclude HTML in mobile version</label>
                     <comment>Regex exclude html in mobile version(comma separated)</comment>

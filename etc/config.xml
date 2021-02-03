@@ -17,6 +17,7 @@
                 <regex_block><![CDATA[<main id="maincontent"]]></regex_block>
                 <lazy_ajax>0</lazy_ajax>
                 <exclude_html_desktop><![CDATA[//*[@data-exclude_html_desktop="1"]]]></exclude_html_desktop>
+                <exclude_html_tablet><![CDATA[//*[@data-exclude_html_tablet="1"]]]></exclude_html_tablet>
                 <exclude_html_mobile><![CDATA[//*[@data-exclude_html_mobile="1"]]]></exclude_html_mobile>
                 <minify_html>1</minify_html>
                 <minify_js>1</minify_js>
