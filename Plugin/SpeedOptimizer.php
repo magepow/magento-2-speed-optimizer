@@ -2,8 +2,8 @@
 /**
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
- * @Last Modified by:   nguyen
- * @Last Modified time: 2021-02-03 13:01:30
+ * @Last Modified by:   Alex Dong
+ * @Last Modified time: 2021-02-04 14:09:25
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -83,7 +83,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         $deferJs       = $this->helper->getConfigModule('general/defer_js');
 
         $body = $this->processExcludeJs($body, $minifyJs, $deferJs);
-        $body = $this->getHtmlClean($body);
+        // $body = $this->getHtmlClean($body);
         if($minifyHtml) $body = $this->minifyHtml($body);
 
         $bodyClass   = '';
