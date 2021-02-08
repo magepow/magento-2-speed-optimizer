@@ -25,7 +25,7 @@
                 <body_includes><![CDATA[
                     <script type="text/javascript"> 
                         require(["jquery", "magepow/lazyload", "domReady!"], function($, lazyload){
-                        var imgLazy = $('img.lazyload').not(".loaded"); 
+                        var imgLazy = $('.lazyload').not(".loaded"); 
                         imgLazy.lazyload(); 
                         imgLazy.on('load',function(){
                             var img = $(this);
