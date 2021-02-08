@@ -58,8 +58,7 @@
                 </field>
                 <field id="regex_block" translate="label comment" type="textarea" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Regex Block Start Lazyload</label>
-                    <comment>Regex Block HMTL you want add lazyload.</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Regex Block HMTL you want add lazyload example: <<i>!-- lazyload-start --<i>>]]></comment>
                 </field>
                 <field id="exclude_html_desktop" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Regex exclude HTML in desktop version</label>
