@@ -82,6 +82,11 @@
                     <comment>Minify inline Javascript</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+<!--                 <field id="defer_js" translate="label comment" type="select" sortOrder="75"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Defer Javascript</label>
+                    <comment>Move JS code to the bottom of the page</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field> -->
                 <field id="body_includes" translate="label comment" type="textarea" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Scripts and Style Sheets</label>
                     <comment>This will be included before body closing tag in page HTML.</comment>
