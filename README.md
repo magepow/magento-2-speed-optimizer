@@ -60,7 +60,7 @@ php bin/magento setup:static-content:deploy -f
 
 #### ✓ Install Package from ```copy paste``` package
 
-Download the latest version at [Magepow.com](https://magepow.com/)
+Download the latest version at [Magento 2 Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html)
 
 
 ### Page Speed Optimization  FAQs
