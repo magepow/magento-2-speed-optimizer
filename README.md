@@ -1,11 +1,17 @@
 ## Magento 2 Speed Optimizer SEO
 
-The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer of Alothemes will help speed up your website.
+The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. [Magento 2 Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html) of Magepow will help speed up your website.
 
 ### Description
-In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. No doubt, the faster speed can bring to customers a great shopping experience instead of slow page loading. Understanding this, Google used speed as one of the factors to rank a website. If your web speed is fast, your chances of getting to the top will be higher, reach more potential customers, and your ability to sell goods will be higher. 
+In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. (Read more [Why is website speed important](https://magepow.com/blog/post/why-is-site-speed-important/))
 
-To test your web speed you can use Google PageSpeed Insights. This is a free tool of Google that allows you to test the loading speed of websites. If the result is below 90 points, we recommend that you explore ways to make your website perform better. 
+No doubt, the faster speed can bring to customers a great shopping experience instead of slow page loading. Understanding this, Google used speed as one of the factors to rank a website. If your [website speed](https://magepow.com/blog/things-to-know-about-website-speed/) is fast, your chances of getting to the top will be higher, reach more potential customers, and your ability to sell goods will be higher. 
+
+To test your web speed you can use [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/). This is a free tool of Google that allows you to [test the website speed](https://magepow.com/blog/website-speed-test-tools/). If the result is below 80 points, we recommend that you explore ways to make your website perform better. 
+
+Some other tools to measure website speed such as: [Lighthouse](https://magepow.com/blog/google-lighthouse-pagespeed-test-tool/), [GTmetrix](https://magepow.com/blog/website-speed-test-gtmetrix/)...  
+
+Let's find out [why website loading speed very slow](https://magepow.com/blog/website-loading-speed-very-slow/) and them in a number of ways such as: move your website to a better host, using the CDN, minimize HTTP requests, files, optimize CSS, lazy loading, [reduce image sizes to speed up website](https://magepow.com/blog/how-to-speed-up-image-loading-on-website/), use external hosting platforms, reduce the number of plugins, reduce redirects, enable browser caching, set up G-Zip encryption to compress data, [monitor mobile page speed](https://magepow.com/blog/how-to-speed-up-website-for-mobile/)... (Detailed information about [how to speed up website](https://magepow.com/blog/how-to-speed-up-website/))
 
 Speed Optimizer for Magento 2 is the extension that can help page speed optimization and performance optimization by using simple and quick configurations. No coding needed, the store owners also can enable, manage, configure in Admin Panel. For example, in the Admin Panel, you can easy to apply LazyLoad, minify HTML, defer JavaScripts... to improve your website speed. Therefore, Magento 2 Speed Optimizer extension will help you save much time and cost.
 
