@@ -1,6 +1,6 @@
-## Magento 2 Speed Optimizer SEO
+## Magento 2 Speed Optimizer Extension
 
-The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. [Magento 2 Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html) of Magepow will help speed up your website.
+The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer (also known as [Google page speed optimizer Magento 2](https://magepow.com/magento2-speed-optimizer.html)) of Magepow will help speed up your website.
 
 ### Description
 In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. (Read more [Why is website speed important](https://magepow.com/blog/post/why-is-site-speed-important/))
@@ -42,7 +42,7 @@ Speed Optimizer for Magento 2 is the extension that can help page speed optimiza
 - Scripts and Style Sheets: This field is for who want to customize the lazy load, use particular scripts or style.
 
 
-### Result After using Speed Optimizer Extension
+### Result After using Magento 2 Speed Optimizer Extension
 
 #### Speed Test On Gtmetrix.Com
 
@@ -52,8 +52,8 @@ Speed Optimizer for Magento 2 is the extension that can help page speed optimiza
 
  ![speedoptimizer-img](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/speed_google.jpg)
  
-### Magepow_Speed Optimizer Pricing
- [![ Magepow_Speed Optimizer Pricing](https://github.com/magepow/magento2-speedoptimizer/blob/master/media/Magento_Speed_Optimization_Pro.png)](https://alothemes.com/default/magento-speed-optimization-service.html)
+### Magento 2 Speed Optimization Service of Magepow
+ [![ Magento Speed Optimization Service](https://github.com/magepow/magento2-speedoptimizer/blob/master/media/Magento_Speed_Optimization_Pro.png)](https://magepow.com/magento-speed-optimization-service.html)
 ### How to install Magento 2 Speed Optimizer
 #### ✓ Install Magepow Speed Optimizer via composer (recommend)
 Run the following command in Magento 2 root folder:
@@ -66,10 +66,10 @@ php bin/magento setup:static-content:deploy -f
 
 #### ✓ Install Package from ```copy paste``` package
 
-Download the latest version at [Magento 2 Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html)
+Download the latest version at [Magento 2 Speed Optimization Extension](https://magepow.com/magento2-speed-optimizer.html)
 
 
-### Page Speed Optimization  FAQs
+### Page Speed Optimization FAQs
 
 #### Q: I got error javascript after enabled module
 A: The error can cause with SyntaxError: missing ; before statement. When module speedoptimizer minify js will cause error
@@ -80,7 +80,7 @@ Solution 1 (Recommend): Fixed the all missing ; before statement you can use 'us
 Solution 2: Go to Admin Panel > Stores > Configuration > Magepow > Speed Optimizer > Minify inline Javascript => Choose "No"
 
 ### Detail User Guide
-* [Magento2 speed optimization](https://docs.alothemes.com/m2/extension/speedoptimizer/)
+* [User Guide Extension](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
 ### Donation
 
