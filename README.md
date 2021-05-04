@@ -41,6 +41,21 @@ Speed Optimizer for Magento 2 is the extension that can help page speed optimiza
 #### 5. Easy To Customize
 - Scripts and Style Sheets: This field is for who want to customize the lazy load, use particular scripts or style.
 
+| Features  | Free Version  | Pro Version |
+| :------------ |:---------------:| :-----:|
+|Preloading Body|:white_check_mark:|:white_check_mark:|
+|Change the preloading body icon|:white_check_mark:|:white_check_mark:|
+|Preloading Images|:white_check_mark:|:white_check_mark:|
+|Change the preloading images icon|:white_check_mark:|:white_check_mark:|
+|Lazy Load |:white_check_mark:|:white_check_mark:|
+|Exclude images that loaded, not lazy or do not want to be preloaded|:white_check_mark:|:white_check_mark:|
+|Placeholder help keep layout original while loading|:white_check_mark:|:white_check_mark:|
+|Set the position where you want to apply the lazy load from that to bottom|:white_check_mark:|:white_check_mark:|
+|Exclude HTML in desktop version|:white_check_mark:|:white_check_mark:|
+|Exclude HTML in mobile version|:white_check_mark:|:white_check_mark:|
+|Minify Html|:white_check_mark:|:white_check_mark:|
+|Minify inline Javascript|:white_check_mark:|:white_check_mark:|
+|Customize the lazy load, use particular scripts or style|:white_check_mark:|:white_check_mark:|
 
 ### Result After using Magento 2 Speed Optimizer Extension
 
