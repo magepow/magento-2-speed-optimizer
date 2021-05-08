@@ -56,6 +56,13 @@ Speed Optimizer for Magento 2 is the extension that can help page speed optimiza
 |Minify Html|:white_check_mark:|:white_check_mark:|
 |Minify inline Javascript|:white_check_mark:|:white_check_mark:|
 |Customize the lazy load, use particular scripts or style|:white_check_mark:|:white_check_mark:|
+|Do not load images until mouse movement|X|:white_check_mark:|
+|Enabled mode no-js support optimize scores Gtmetrix or Google pagespeed|X|:white_check_mark:|
+|The unladen image will appear as a frame with the background|X|:white_check_mark:|
+|Customize background color|X|:white_check_mark:|
+|Customize background opacity|X|:white_check_mark:|
+
+Download the latest version at [Magento 2 Speed Optimization Extension](https://magepow.com/magento2-speed-optimizer.html)
 
 ### Result After using Magento 2 Speed Optimizer Extension
 
@@ -80,8 +87,6 @@ php bin/magento setup:static-content:deploy -f
 ```
 
 #### ✓ Install Package from ```copy paste``` package
-
-Download the latest version at [Magento 2 Speed Optimization Extension](https://magepow.com/magento2-speed-optimizer.html)
 
 
 ### Page Speed Optimization FAQs
