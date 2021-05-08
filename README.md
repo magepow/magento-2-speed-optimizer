@@ -41,6 +41,8 @@ Speed Optimizer for Magento 2 is the extension that can help page speed optimiza
 #### 5. Easy To Customize
 - Scripts and Style Sheets: This field is for who want to customize the lazy load, use particular scripts or style.
 
+**Pro version with outstanding features**
+
 | Features  | Free Version  | Pro Version |
 | :------------ |:---------------:| :-----:|
 |Preloading Body|:white_check_mark:|:white_check_mark:|
