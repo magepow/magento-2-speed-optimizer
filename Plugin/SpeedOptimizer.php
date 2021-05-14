@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2021-02-08 23:32:57
+ * @Last Modified time: 2021-05-14 12:11:50
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -322,7 +322,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
     {
         $regex   = '~//?\s*\*[\s\S]*?\*\s*//?~'; // RegEx to remove /** */ and // ** **// php comments
         $search = array(
-            '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/',
+            '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\') \/\/.*))/',
             '/(\s)+/s',         // shorten multiple whitespace sequences
         );
 
