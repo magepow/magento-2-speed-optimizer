@@ -1,6 +1,6 @@
 ## Magento 2 Speed Optimizer Extension
 
-The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer (also known as [Google page speed optimizer Magento 2](https://magepow.com/magento2-speed-optimizer.html)) of Magepow will help speed up your website.
+The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer or Magento 2 Speed Optimize (also known as [Google page speed optimizer Magento 2](https://magepow.com/magento2-speed-optimizer.html)) of Magepow will help speed up your website.
 
 ### Description
 In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. (Read more [Why is website speed important](https://magepow.com/blog/post/why-is-site-speed-important/))
@@ -102,7 +102,7 @@ Solution 1 (Recommend): Fixed the all missing ; before statement you can use 'us
 Solution 2: Go to Admin Panel > Stores > Configuration > Magepow > Speed Optimizer > Minify inline Javascript => Choose "No"
 
 ### Detail User Guide
-* [User Guide Extension](https://docs.alothemes.com/m2/extension/speedoptimizer/)
+* [User Guide Magento 2 Speed Optimize Extension](https://docs.alothemes.com/m2/extension/speedoptimizer/)
 
 ### Donation
 
