@@ -3,7 +3,7 @@
  * @Author: nguyen
  * @Date:   2020-02-12 14:01:01
  * @Last Modified by:   Alex Dong
- * @Last Modified time: 2021-05-14 12:11:50
+ * @Last Modified time: 2021-06-16 15:12:06
  */
 
 namespace Magepow\SpeedOptimizer\Plugin;
@@ -390,8 +390,8 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
         $favicon = $staticUrl . '/favicon.ico';
 
         // $preload .= '<link rel="preload" type="text/json" crossorigin="anonymous" href="' . $jsTranslation . '"></>';
-        $preload .= '<link rel="preload" as="icon" crossorigin="anonymous" href="' . $placeholder . '"></>';
-        $preload .= '<link rel="preload" as="icon" crossorigin="anonymous" href="' . $favicon . '"></>';
+        // $preload .= '<link rel="preload" as="icon" crossorigin="anonymous" href="' . $placeholder . '"></>';
+        // $preload .= '<link rel="preload" as="icon" crossorigin="anonymous" href="' . $favicon . '"></>';
         $loadingBody = $this->helper->getConfigModule('general/loading_body_placeholder');
 
         $loadingBody = $loadingBody ? $mediaUrl . 'magepow/speedoptimizer/' . $loadingBody : $placeholder;
