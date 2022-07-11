@@ -6,9 +6,9 @@ Overall, there are many ways to speed up your website. However, in some cases if
 
 #### Magento Cloud | Magepow
 
- [![magento cloud](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/magento-hosting.jpg)](https://magepow.com/magento-cloud)
+ [![magento cloud](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/magento-hosting.jpg)](https://magepow.com/magento-cloud?ref=optimizespeed)
 
-You can find out more [here](https://magepow.com/magento-cloud)
+You can find out more [here](https://magepow.com/magento-cloud?ref=optimizespeed)
 
 ### Description
 In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. (Read more [Why is website speed important](https://magepow.com/blog/post/why-is-site-speed-important/))
