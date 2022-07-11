@@ -2,6 +2,14 @@
 
 The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer or Magento 2 Speed Optimize (also known as [Google page speed optimizer Magento 2](https://magepow.com/magento2-speed-optimizer.html)) of Magepow will help speed up your website.
 
+Overall, there are many ways to speed up your website. However, in some cases if your hosting is too weak and can hardly meet the data source on your website. We recommend upgrading your hosting plan. It is one of the easiest and fastest ways to improve website speed in such cases. Currently we offer several hosting packages with configuration settings to get high performance for your store.
+
+#### Magento Cloud | Magepow
+
+ ![magento cloud](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/magento-hosting.jpg)
+
+You can find out more [here](https://magepow.com/magento-cloud)
+
 ### Description
 In fact, many research resources show that users often leave a website if it takes more than 3 seconds to load. Thus, it can be seen that a slow web speed will make you lose potential customers before they visit your store. (Read more [Why is website speed important](https://magepow.com/blog/post/why-is-site-speed-important/))
 
