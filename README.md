@@ -6,7 +6,7 @@ Overall, there are many ways to speed up your website. However, in some cases if
 
 #### Magento Cloud | Magepow
 
- ![magento cloud](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/magento-hosting.jpg)
+ [![magento cloud](https://github.com/magepow/magento2-SpeedOptimizer/blob/master/media/magento-hosting.jpg)](https://magepow.com/magento-cloud)
 
 You can find out more [here](https://magepow.com/magento-cloud)
 
