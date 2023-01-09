@@ -12,7 +12,7 @@
                 <enabled>1</enabled>
                 <loading_body>0</loading_body>
                 <loading_img>1</loading_img>
-                <exclude_img>loaded, notlazy</exclude_img>
+                <exclude_img>loaded, notlazy, owl-lazy</exclude_img>
                 <placeholder>1</placeholder>
                 <regex_block><![CDATA[<main id="maincontent"]]></regex_block>
                 <lazy_ajax>0</lazy_ajax>
