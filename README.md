@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 Speed Optimizer Extension
 
 The speed of your website is slow, which has a negative effect on Google rating and ranking and especially on the customer experience. Magento 2 Speed Optimizer or Magento 2 Speed Optimize (also known as [Google page speed optimizer Magento 2](https://magepow.com/magento2-speed-optimizer.html)) of Magepow will help speed up your website.
