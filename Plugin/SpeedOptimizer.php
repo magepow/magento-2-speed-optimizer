@@ -219,6 +219,7 @@ class SpeedOptimizer extends \Magento\Framework\View\Element\Template
             function($match) use ($placeholder) {
 
                 if(stripos($match[0], ' data-src="') !== false) return $match[0];
+                if(stripos($match[0], ' loading="lazy"') !== false) return $match[0];
                 if(stripos($match[0], ' class="') !== false){
                     if( $this->isExclude($match[1]) ) return $match[0];
                     $lazy = str_replace(' class="', ' class="lazyload ', (string) $match[0]); 
