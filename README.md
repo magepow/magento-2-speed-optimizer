@@ -89,17 +89,8 @@ Download the latest version at [Magento 2 Speed Optimization Extension](https://
 ### Magento 2 Speed Optimization Service of Magepow
  [![ Magento Speed Optimization Service](https://github.com/magepow/magento2-speedoptimizer/blob/master/media/Magento_Speed_Optimization_Pro.png)](https://magepow.com/magento-speed-optimization-service.html)
 ### How to install Magento 2 Speed Optimizer
-#### ✓ Install Magepow Speed Optimizer via composer (recommend)
-Run the following command in Magento 2 root folder:
 
-```
-composer require magepow/speedoptimizer
-php bin/magento setup:upgrade
-php bin/magento setup:static-content:deploy -f
-```
-
-#### ✓ Install Package from ```copy paste``` package
-
+* [Download Magento 2 Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html)
 
 ### Page Speed Optimization FAQs
 
